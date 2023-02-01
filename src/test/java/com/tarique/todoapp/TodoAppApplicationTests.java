@@ -1,10 +1,10 @@
-package com.tarique.todo;
+package com.tarique.todoapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TodoApplicationTests {
+class TodoAppApplicationTests {
 
 	@Test
 	void contextLoads() {

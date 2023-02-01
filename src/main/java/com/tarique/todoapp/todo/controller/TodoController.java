@@ -24,6 +24,8 @@ public class TodoController {
     public List<TodoEntity> addTodo(@RequestBody TodoEntity newTodo){
         return todoService.addTodo(newTodo);
     }
-
-
+@GetMapping("/test")
+public String test(){
+        return "hi working";
+}
 }

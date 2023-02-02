@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TodoService {
@@ -19,4 +20,21 @@ public class TodoService {
         todoRepo.save(newTodo);
         return getTodos();
     }
+
+    public List<TodoEntity> updateTodo(TodoEntity editTodo,String id){
+        if(todoRepo.existsById(id)) {
+            editTodo.setId(id);
+            todoRepo.save(editTodo);
+        }
+        return getTodos();
+
+    }
+
+    public List<TodoEntity> deleteTodo(String id){
+        if(todoRepo.existsById(id)){
+            todoRepo.deleteById(id);
+        }
+        return getTodos();
+    }
+
 }

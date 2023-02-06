@@ -3,6 +3,8 @@ package com.tarique.todoapp.todo.entity;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
 
+import java.io.Serializable;
+
 @EntityScan
 public class TodoEntity {
     @Id
@@ -10,7 +12,8 @@ public class TodoEntity {
     private String title;
     private String description;
 
-    public TodoEntity(String title, String description) {
+    public TodoEntity(String id, String title, String description) {
+        this.id = id;
         this.title = title;
         this.description = description;
     }
@@ -38,4 +41,5 @@ public class TodoEntity {
     public void setId(String id) {
         this.id = id;
     }
+
 }
